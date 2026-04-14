@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const statusConfig = {
   overdue: { label: "Overdue", className: "bg-[#EF4444] text-white" },
@@ -7,10 +8,11 @@ const statusConfig = {
 };
 
 export default function FriendCard({ contact }) {
-  const { name, picture, days_since_contact, tags, status } = contact;
+  const { id, name, picture, days_since_contact, tags, status } = contact;
   const statusInfo = statusConfig[status] || { label: status, className: "bg-gray-100 text-gray-600" };
 
   return (
+    <Link href={`/friends/${id}`}>
     <div className="bg-white border border-gray-100 rounded-lg p-6 flex flex-col items-center gap-2 shadow-sm">
       <div className="relative w-16 h-16 rounded-full overflow-hidden">
         <Image src={picture} alt={name} fill sizes="64px" className="object-cover" />
@@ -35,6 +37,6 @@ export default function FriendCard({ contact }) {
       <span className={`text-[11px] font-semibold px-3 py-1 rounded-full ${statusInfo.className}`}>
         {statusInfo.label}
       </span>
-    </div>
+    </div></Link>
   );
 }
