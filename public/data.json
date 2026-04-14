@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "John Doe",
-    "picture": "https://example.com/photo1.jpg",
+    "picture": "/avatars/John_Doe.png",
     "email": "john@example.com",
     "days_since_contact": 12,
     "status": "overdue",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Sarah Ahmed",
-    "picture": "https://example.com/photo2.jpg",
+    "picture": "/avatars/Michael.png",
     "email": "sarah@example.com",
     "days_since_contact": 6,
     "status": "almost due",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Michael Lee",
-    "picture": "https://example.com/photo3.jpg",
+    "picture": "/avatars/img3.png",
     "email": "michael@example.com",
     "days_since_contact": 3,
     "status": "on-track",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "Ayesha Khan",
-    "picture": "https://example.com/photo4.jpg",
+    "picture": "/avatars/img4.png",
     "email": "ayesha@example.com",
     "days_since_contact": 15,
     "status": "overdue",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "David Smith",
-    "picture": "https://example.com/photo5.jpg",
+    "picture": "/avatars/img5.png",
     "email": "david@example.com",
     "days_since_contact": 5,
     "status": "almost due",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Nusrat Jahan",
-    "picture": "https://example.com/photo6.jpg",
+    "picture": "/avatars/img6.png",
     "email": "nusrat@example.com",
     "days_since_contact": 2,
     "status": "on-track",
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "name": "Tanvir Hasan",
-    "picture": "https://example.com/photo7.jpg",
+    "picture": "/avatars/img7.png",
     "email": "tanvir@example.com",
     "days_since_contact": 20,
     "status": "overdue",
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "name": "Emily Brown",
-    "picture": "https://example.com/photo8.jpg",
+    "picture": "/avatars/img8.png",
     "email": "emily@example.com",
     "days_since_contact": 6,
     "status": "almost due",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "name": "Rakib Islam",
-    "picture": "https://example.com/photo9.jpg",
+    "picture": "/avatars/img9.png",
     "email": "rakib@example.com",
     "days_since_contact": 1,
     "status": "on-track",
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Sophia Wilson",
-    "picture": "https://example.com/photo10.jpg",
+    "picture": "/avatars/img10.png",
     "email": "sophia@example.com",
     "days_since_contact": 11,
     "status": "overdue",
