@@ -1,3 +1,4 @@
+import { FaPlus } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
@@ -16,8 +17,8 @@ const HeroSection = () => {
 
         {/* Button */}
         <div className="mt-6">
-          <button className="bg-[#244D3F] text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-green-800 transition">
-            + Add a Friend
+          <button className="inline-flex items-center gap-2 bg-[#244D3F] text-white px-5 py-2.5 rounded-md text-[16px] font-medium hover:bg-green-800 transition">
+            <FaPlus />Add a Friend
           </button>
         </div>
 
