@@ -7,6 +7,13 @@ const ContactContext = createContext();
 export const ContactProvider = ({ children }) => {
   const [contacts, setContacts] = useState([]);
 
+  // for timeline page
+  const [timeline, setTimeline] = useState([]);
+
+const addToTimeline = (entry) => {
+  setTimeline((prev) => [entry, ...prev]);
+};
+
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
@@ -14,7 +21,7 @@ export const ContactProvider = ({ children }) => {
   }, []);
 
   return (
-    <ContactContext.Provider value={{ contacts }}>
+    <ContactContext.Provider value={{ contacts, timeline, addToTimeline }}>
       {children}
     </ContactContext.Provider>
   );

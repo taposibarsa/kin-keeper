@@ -7,14 +7,34 @@ import { FiArchive, FiClock, FiTrash2 } from "react-icons/fi";
 import { PiPhoneCallBold } from "react-icons/pi";
 import { IoMdText } from "react-icons/io";
 import { FaVideo } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function FriendDetails() {
     const { id } = useParams();
     const { contacts } = useContacts();
 
+
     const friend = contacts.find((c) => c.id == id);
 
     if (!friend) return <p className="text-center mt-20">Loading...</p>;
+
+    const { addToTimeline } = useContacts();
+
+    const handleAction = (type) => {
+        toast.success(`${type} with ${friend.name}`);
+
+        addToTimeline({
+            id: Date.now(),
+            type: type.toLowerCase(), // call, text, video
+            name: friend.name,
+            date: new Date().toLocaleDateString("en-US", {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                year: "numeric"
+            })
+        });
+    };
 
     return (
         <div className="bg-[#F7F8FA] max-w-5xl mx-auto py-14 px-4">
@@ -126,17 +146,17 @@ export default function FriendDetails() {
                         </h3>
 
                         <div className="grid grid-cols-3 gap-4">
-                            <button className="bg-gray-100 flex flex-col items-center justify-center text-center rounded-sm p-4 text-sm hover:bg-gray-50 ">
-                                <PiPhoneCallBold className="text-xl text-gray-600 mb-1" /> 
+                            <button onClick={() => handleAction("Call")} className="bg-gray-100 flex flex-col items-center justify-center text-center rounded-sm p-4 text-sm hover:bg-gray-50 ">
+                                <PiPhoneCallBold className="text-xl text-gray-600 mb-1" />
+                                <span>Call</span>
+                            </button>
+                            <button onClick={() => handleAction("Text")} className="bg-gray-100 flex flex-col items-center justify-center text-center rounded-sm p-4 text-sm hover:bg-gray-50">
+                                <IoMdText className="text-xl text-gray-600 mb-1" />
                                 <span>Text</span>
                             </button>
-                            <button className="bg-gray-100 flex flex-col items-center justify-center text-center rounded-sm p-4 text-sm hover:bg-gray-50">
-                                <IoMdText className="text-xl text-gray-600 mb-1" /> 
-                                <span>Text</span>
-                            </button>
-                            <button className="bg-gray-100 flex flex-col items-center justify-center text-center rounded-sm p-4 text-sm hover:bg-gray-50">
-                                <FaVideo className="text-xl text-gray-600 mb-1" /> 
-                                <span>Text</span>
+                            <button onClick={() => handleAction("Video")} className="bg-gray-100 flex flex-col items-center justify-center text-center rounded-sm p-4 text-sm hover:bg-gray-50">
+                                <FaVideo className="text-xl text-gray-600 mb-1" />
+                                <span>Video</span>
                             </button>
                         </div>
                     </div>
@@ -172,6 +192,7 @@ export default function FriendDetails() {
 
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }
