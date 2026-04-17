@@ -3,7 +3,7 @@
 import { useContacts } from "@/context/ContactContext";
 import { PieChart, Pie, Cell } from "recharts";
 
-export default function StatsPage() {
+ const  StatsPage = () => {
 
 
   const { timeline } = useContacts();
@@ -33,15 +33,15 @@ export default function StatsPage() {
   const COLORS = ["#7C3AED", "#1F3D2B", "#2F855A"];
 
   return (
-    <div className="bg-[#F7F8FA] min-h-screen py-12 px-4">
+    <div className="bg-[#F7F8FA] min-h-[60vh] py-12 px-4">
       <div className="max-w-4xl mx-auto">
 
-        <h1 className="text-2xl font-semibold text-gray-800 mb-6">
+        <h1 className="text-5xl font-semibold text-[#1F2937] mb-6">
           Friendship Analytics
         </h1>
 
-        <div className="bg-white p-6 rounded-xl shadow-sm">
-          <p className="text-sm text-gray-600 mb-4">
+        <div className="bg-white p-6 rounded-md shadow-sm">
+          <p className="text-xl text-[#244D3F] mb-4">
             By Interaction Type
           </p>
 
@@ -61,7 +61,7 @@ export default function StatsPage() {
               </Pie>
             </PieChart>
 
-            {/* 👉 7. Legend */}
+
             <div className="flex gap-6 mt-4 text-sm text-gray-600">
               <div className="flex items-center gap-1">
                 <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
@@ -86,3 +86,4 @@ export default function StatsPage() {
     </div>
   );
 }
+export default StatsPage;

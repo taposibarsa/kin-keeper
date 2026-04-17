@@ -7,7 +7,7 @@ const statusConfig = {
   "on-track": { label: "On-Track", className: "bg-[#244D3F] text-white" },
 };
 
-export default function FriendCard({ contact }) {
+const FriendCard = ({ contact }) => {
   const { id, name, picture, days_since_contact, tags, status } = contact;
   const statusInfo = statusConfig[status] || { label: status, className: "bg-gray-100 text-gray-600" };
 
@@ -40,3 +40,4 @@ export default function FriendCard({ contact }) {
     </div></Link>
   );
 }
+export default FriendCard;

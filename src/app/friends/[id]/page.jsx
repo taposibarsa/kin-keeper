@@ -162,7 +162,7 @@ export default function FriendDetails() {
                     </div>
 
                     {/* RECENT INTERACTIONS */}
-                    <div className="bg-white p-5 rounded-xl shadow-sm">
+                    {/* <div className="bg-white p-5 rounded-xl shadow-sm">
                         <div className="flex justify-between items-center mb-4">
                             <h3 className="text-sm font-medium text-gray-700">
                                 Recent Interactions
@@ -188,7 +188,7 @@ export default function FriendDetails() {
                                 <span className="text-xs text-gray-400">Jan 28</span>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

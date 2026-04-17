@@ -7,7 +7,7 @@ import { IoMdText } from "react-icons/io";
 import { PiPhoneCallBold } from "react-icons/pi";
 import { FaVideo } from "react-icons/fa";
 
-export default function TimelinePage() {
+const TimelinePage = () => {
 
     const [filter, setFilter] = useState("all");
     const { timeline } = useContacts();
@@ -39,7 +39,7 @@ export default function TimelinePage() {
                     Timeline
                 </h1>
 
-                {/* FILTER */}
+
                 <select
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
@@ -51,7 +51,7 @@ export default function TimelinePage() {
                     <option value="video">Video</option>
                 </select>
 
-                {/* LIST */}
+
                 <div className="space-y-3">
                     {filteredTimeline.map((item) => (
                         <div
@@ -64,7 +64,7 @@ export default function TimelinePage() {
 
                             <div>
                                 <p className="text-sm text-gray-700">
-                                    <span className="font-medium capitalize">
+                                    <span className="font-bold capitalize text-[#244D3F]">
                                         {item.type}
                                     </span>{" "}
                                     with {item.name}
@@ -81,3 +81,4 @@ export default function TimelinePage() {
         </div>
     );
 }
+export default TimelinePage;
