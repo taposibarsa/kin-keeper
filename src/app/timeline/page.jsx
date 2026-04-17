@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useContacts } from "@/context/ContactContext";
 import { PiHandshake } from "react-icons/pi";
 import { IoMdText } from "react-icons/io";
@@ -7,7 +8,13 @@ import { PiPhoneCallBold } from "react-icons/pi";
 import { FaVideo } from "react-icons/fa";
 
 export default function TimelinePage() {
+
+    const [filter, setFilter] = useState("all");
     const { timeline } = useContacts();
+    const filteredTimeline =
+        filter === "all"
+            ? timeline
+            : timeline.filter((item) => item.type === filter);
 
     const getIcon = (type) => {
         switch (type) {
@@ -22,22 +29,31 @@ export default function TimelinePage() {
         }
     };
 
+
+
     return (
-        <div className="bg-[#F7F8FA] min-h-screen py-12 px-4">
-            <div className="max-w-3xl mx-auto">
+        <div className="bg-[#F7F8FA] min-h-[60vh] py-12 px-4">
+            <div className="max-w-5xl mx-auto">
 
                 <h1 className="text-2xl font-semibold text-gray-800 mb-6">
                     Timeline
                 </h1>
 
                 {/* FILTER */}
-                <select className="mb-6 border px-3 py-2 rounded-md text-sm text-gray-600">
-                    <option>Filter timeline</option>
+                <select
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                    className="mb-6 border px-3 py-2 rounded-md text-sm text-gray-600"
+                >
+                    <option value="all">All</option>
+                    <option value="call">Call</option>
+                    <option value="text">Text</option>
+                    <option value="video">Video</option>
                 </select>
 
                 {/* LIST */}
                 <div className="space-y-3">
-                    {timeline.map((item) => (
+                    {filteredTimeline.map((item) => (
                         <div
                             key={item.id}
                             className="bg-white flex items-center gap-4 p-4 rounded-md shadow-sm"
